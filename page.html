@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfilo Website</title>
+
+  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="hero.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="project.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <link rel="stylesheet" href="media_largerscreen.css" />
+    <link rel="stylesheet" href="media_mediumscreen.css"/>
+    <link rel="stylesheet" href="media_tabscreen.css"/>
+    <link rel="stylesheet" href="media_tabsmallscreen.css"/>
+    <link rel="stylesheet" href="media_phonescreen.css"/>
+
+
+
+
+     <!-- CodeMirror core and theme styles -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/dracula.min.css"/>
+
+
+  </head>
+
+  <body>
+
+ <!---------------------------- Nav Section ----------------------->
+   <section class="nav" >
+    <div class="logo">
+      <a href="https://www.linkedin.com/in/swarup-das081/" target="_blank" >
+      <img src="assets/portfolio_logo_dark.png">
+    </a>
+    </div>
+
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav_items" id="navMenu">
+
+  <div class="nav_name" >
+    <div class="nav_home"><a href=#home>Home</a></div>
+    <div class="nav_about"><a href=#about>About</a></div>
+    <div class="nav_project"><a href=#project>Projects</a></div>
+    <div class="nav_project"><a href=#contact>Contact</a></div>
+
+
+
+  </div>
+    <div class="github_button">
+    <a href="https://github.com/swarup081" target="_blank" class="github-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon" />
+       GitHub
+    </a>
+  </div>
+
+
+
+
+  </div>
+   </section>
+
+  
+<!------------------------ Hero Section --------------------------->
+<section class="hero second-page" id="home">
+     
+
+  <div class="coder-section"> <!-- <coder> Section -->
+    <div class="scroll-animate-up heading"> <!-- scroll-up -->
+      <div class="coder-wrapper">
+        <div class="coder_header">
+          <span class="symbols">&lt;</span> 
+          <span class="c">C</span>
+          <span class="o">O</span>
+          <span class="d">D</span>
+          <span class="e">E</span>
+          <span class="r">R</span>
+          <span class="symbols">&gt;</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-animate-up subheading"> <!-- subhding dly krna hai css pe -->
+      <div class="coder_sub">
+        <p>Aspiring developer turning ideas into<br>  clean,functional code. Passionate<br>  about building intuitive web experiences.</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero_img">
+    <img src="assets/herophoto_portfolio.png" alt="My photo for coder page"/>  <!--img middle pe-->
+  </div>
+  <div class="uiux-section">  <!-- uiux Section -->
+    <div class="scroll-animate-up heading">
+      <div class="uiux_header">
+        <div class="uiux">
+          <span class="u">U</span>
+          <span class="i">I</span>
+          <span class="u-outline">U</span>
+          <span class="x">X</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-animate-up subheading">
+      <div class="uiux_sub">
+        <p>Blending design and function to craft<br> user-friendly, engaging, and<br> visually pleasing digital experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+   
+
+    <!---------------     About Section   ------------->
+  <section class="about_me first-page" id="about"> 
+    <div class="header finisher-header" >
+      <div class="about_wrapper">
+        <div class="about_photo_container">
+        <div class="about_img">
+            <img src="assets/aboutphoto_portfolio.png" alt="My photo for about page"/>
+        </div> 
+        </div>
+        <div class="about_header">
+          <h1 class="heading_about">About Me</h1>
+          <div class="typing_effect">
+            <div class="animated-text">
+              I'm Swarup Das - <span></span> <!-- Typing effect text -->
+          </div>
+          </div>
+         
+      
+           <p class="sub_heading">Currently pursuing B.Tech in Computer Science and Engineering at NIT Silchar.<br> Passionate about designing digital experiences and solving problems through code,<br> with a drive for continuous growth in tech and design.</p>   
+          <div class="underline">
+            <div class="items">
+           
+              <p class="items_head active_link" onclick="opentab('skills', this)">SKILLS</p>
+              <p class="items_head" onclick="opentab('education', this)">EDUCATION</p>
+              <p class="items_head" onclick="opentab('experience', this)">EXPERIENCE</p>
+              <p class="items_head" onclick="opentab('intrests', this)">INTERESTS</p>
+       
+
+
+
+           </div> 
+           <div class="total_content">
+          <div class="item_content active-tab" id="skills" >
+            <ul>
+              <li><span>Web Development</span><br>
+                Skilled in building responsive and efficient web applications.</li>
+              <li><span>Problem Solving</span><br>
+                Strong foundation in logic building and algorithmic thinking.</li>
+              <li><span>UI/UX Design Sense</span><br>
+                Passionate about creating user-friendly and visually appealing interfaces.</li>
+
+            </ul>
+          </div>
+
+
+
+
+          <div class="item_content" id="education">
+            <ul>
+              <li>
+                <span>B.Tech in CSE from NIT Silchar</span><br>
+                Pursuing core subjects like Data Structures, Web Development, and Algorithms.
+              </li>
+              <li>
+                <span>Higher Secondary form K.V. ONGC, Srikona</span><br>
+                Studied foundational concepts in Physics, Chemistry, Mathematics, and Computer Science.
+              </li>
+              <li>
+                <span>Secondary Education from K.V. ONGC, Srikona</span><br>
+                Focused on core academic subjects with an introduction to basic programming concepts.
+              </li>
+            </ul>
+          </div>
+
+
+
+
+          <div class="item_content" id="experience">
+            <ul>
+              <li>
+                <span>Web Development Practice</span><br>
+                Gained practical experience by building responsive interfaces using HTML, CSS, and JavaScript.
+              </li>
+              <li>
+                <span>Technical Club Involvement</span><br>
+                Actively engaged in campus tech communities through coding events and discussions.
+              </li>
+              <li>
+                <span>Hackathon Exposure</span><br>
+                Participated in hackathons to explore teamwork and real-world problem solving.
+              </li>
+            </ul>
+          </div>
+
+
+
+
+          <div class="item_content" id="intrests">
+            <ul>
+              <li>
+                <span>Creative Problem Solving</span><br>
+                Enjoy approaching challenges with a fresh and logical perspective.
+              </li>
+              <li>
+                <span>Machine Learning</span><br>
+                Exploring the basics of ML and its practical applications in real-world problems.
+              </li>
+              <li>
+                <span>Team Collaboration & Communication</span><br>
+                Value clear communication and teamwork in both technical and creative environments.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+          </div>  
+          </div>
+        </div>        
+
+    </div>
+ 
+  </section>
+
+
+
+  <!-------------------------- Projects Section --------------------- --> 
+
+
+
+  <section class="projects" id="project">
+  <h2 class="project_heading">My Works</h2>
+  <p class="project_subheading">A curated list of the projects I've completed across various domains.</p>
+  <div class="box">
+  <div class="box_1 project_head active_project_link" onclick="opentabproject('All',this)">
+    All
+  </div>
+  <div class="box_2  project_head active_project_link" onclick="opentabproject('Web',this)">
+    Web
+  </div>
+  <div class="box_3  project_head active_project_link" onclick="opentabproject('ML',this)">
+    ML
+  </div>
+  <div class="box_4  project_head active_project_link" onclick="opentabproject('Design',this)">
+    Design
+  </div>
+  <div class="box_5  project_head active_project_link" onclick="opentabproject('Other',this)">
+    Other
+  </div>
+
+</div>
+
+
+<div class="box_content project_content active_project_tab" id="all" >
+  <div class="box_content_1">
+    <img class="project_img" src="assets/desh_board_project.png" alt="img-3">
+    <div class="tools">
+      <div class="tools_name">FE Stack</div>
+      <div class="tools_name">Chart.js</div>
+      <div class="tools_name">React</div>
+    </div>
+   <h1 class="project_in_heading">Data Pulse App</h1>
+   <h4 class="project_in_subheading">An intelligent dashboard showing analytics, metrics, and user insights.</h4>
+
+  </div>
+  <div class="box_content_2">
+    <img class="project_img" src="assets/smartwatch_project.jpg" alt="img-2">
+    <div class="tools">
+      <div class="tools_name">HTML</div>
+      <div class="tools_name">CSS</div>
+      <div class="tools_name">JS</div>
+    </div>
+    <h1 class="project_in_heading">Eonix Smartwatch</h1>
+    <h4 class="project_in_subheading">A product based wesite for a futurestic techy smartwatch brand name Eonix</h4>
+
+  </div>
+  <div class="box_content_11">
+    <img class="project_img" src="assets/landingpageui_project.webp" alt="img-8">
+
+    <div class="tools">
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">HTML</div>
+      <div class="tools_name">ScrollTrigger</div>
+      <div class="tools_name">CSS</div>
+    </div>
+    <h1 class="project_in_heading"> BrandMark</h1>
+    <h4 class="project_in_subheading">A creative and minimal UI for brand to explore there desired design and inspiration.</h4>
+
+
+  </div>
+  <div class="box_content_3">
+    <img class="project_img" src="assets/e-com_project.webp" alt="img-3">
+    <div class="tools">
+      <div class="tools_name">React</div>
+      <div class="tools_name">Tailwind CSS</div>
+      <div class="tools_name">Redux Toolkit</div>
+      <div class="tools_name">FakeStore API </div>
+    </div>
+    <h1 class="project_in_heading"> Neo-Cart</h1>
+    <h4 class="project_in_subheading">A clean UI for browsing products and managing cart actions.</h4>
+
+
+  </div>
+  <div class="box_content_7">
+    <img class="project_img" src="assets/Chatbot_Brain_project.webp" alt="img-7">
+    <div class="tools">
+      <div class="tools_name">PyTorch</div>
+      <div class="tools_name">EEG dataset</div>
+      <div class="tools_name">NumPy</div>
+      <div class="tools_name">Matplotlib </div>
+    </div>
+    <h1 class="project_in_heading">NeurNet</h1>
+    <h4 class="project_in_subheading"> A brain-inspired machine learning model for intelligent pattern recognition.</h4>
+
+
+  </div>
+  
+  <div class="box_content_14">
+    <img class="project_img" src="assets/product_ui_project.webp" alt="img-8">
+    <div class="tools">
+      <div class="tools_name">Adobe Illustrator</div>
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">Canva</div>
+    </div>
+    <h1 class="project_in_heading"> OXVision</h1>
+    <h4 class="project_in_subheading">Responsive landing page wireframe crafted with UX in mind.</h4>
+
+
+  </div>
+  <div class="box_content_4">
+    <img class="project_img" src="assets/blog_project.png" alt="img-4">
+    <div class="tools">
+      <div class="tools_name">Node.js</div>
+      <div class="tools_name">Express</div>
+      <div class="tools_name">MongoDB</div>
+      <div class="tools_name">React</div>
+    </div>
+    <h1 class="project_in_heading">Forward Blog</h1>
+    <h4 class="project_in_subheading">Share, read, and manage articles in a beautiful layout.</h4>
+
+
+  </div>
+  <div class="box_content_5">
+    <img class="project_img" src="assets/pass_projrct.png" alt="img-5">
+    <div class="tools">
+      <div class="tools_name">Firebase Auth </div>
+      <div class="tools_name">Tailwind CSS </div>
+      <div class="tools_name">React</div>
+    </div>
+    <h1 class="project_in_heading">SecureGate</h1>
+    <h4 class="project_in_subheading">A modern login/signup system with secure auth integration.</h4>
+
+
+  </div>
+
+  <div class="box_content_6">
+    <img class="project_img" src="assets/chatapp_project.png" alt="img-6">
+    <div class="tools">
+      <div class="tools_name">Socket.IO</div>
+      <div class="tools_name">Node.js</div>
+      <div class="tools_name">Express</div>
+      <div class="tools_name">FE Stack</div>
+    </div>
+    <h1 class="project_in_heading">PingPal</h1>
+    <h4 class="project_in_subheading"> Chat with friends instantly using real-time socket connections.</h4>
+
+
+  </div>
+
+  <div class="box_content_8">
+    <img class="project_img" src="assets/stockprice_detector.png" alt="img-8">
+    <div class="tools">
+      <div class="tools_name">LSTM</div>
+      <div class="tools_name">TensorFlow</div>
+      <div class="tools_name">pandas</div>
+      <div class="tools_name">yfinance</div>
+      <div class="tools_name">Plotly</div>
+
+    </div>
+    <h1 class="project_in_heading">StockVision</h1>
+    <h4 class="project_in_subheading"> Forecasts stock market trends using deep learning models.</h4>
+
+
+  </div>
+  <div class="box_content_12">
+    <img class="project_img" src="assets/workflowai_project.webp" alt="img-12">
+    <div class="tools">
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">HTML</div>
+      <div class="tools_name">GSAP</div>
+      <div class="tools_name">CSS</div>
+    </div>
+    <h1 class="project_in_heading">LaunchPad</h1>
+    <h4 class="project_in_subheading">Responsive landing page wireframe crafted with UX in mind.</h4>
+
+
+  </div>
+  <div class="box_content_9">
+    <img class="project_img" src="assets/movie_suggestion_project.jpeg" alt="img-9">
+    <div class="tools">
+      <div class="tools_name">TMDB API </div>
+      <div class="tools_name">React</div>
+      <div class="tools_name">Axios</div>
+      <div class="tools_name">Tailwind</div>
+    </div>
+    <h1 class="project_in_heading">CineMatch</h1>
+    <h4 class="project_in_subheading"> Recommends movies based on user mood, genre, or history.</h4>
+
+
+  </div>
+
+
+  <div class="box_content_10">
+    <img class="project_img" src="assets/darkmode_project.webp" alt="img-10">
+    <div class="tools">
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">Adobe XD</div>
+      <div class="tools_name">FontAwesome</div>
+    </div>
+    <h1 class="project_in_heading">UI ConvoBot</h1>
+    <h4 class="project_in_subheading">A modified design of our normal and boaring chat-apps </h4>
+
+
+  </div>
+ 
+
+  <div class="box_content_13">
+    <img class="project_img" src="assets/portfolio_ui_project.webp" alt="img-13">
+    <div class="tools">
+      <div class="tools_name">FE Stack</div>
+      <div class="tools_name">GSAP</div>
+      <div class="tools_name">Figma</div>
+    </div>
+    <h1 class="project_in_heading">Devfolio</h1>
+    <h4 class="project_in_subheading">A clean, responsive personal site for showcasing work and skills.</h4>
+
+
+  </div>
+
+  <div class="box_content_15">
+    <img class="project_img" src="assets/ai_cosmetics_reserch_project.png" alt="img-9">
+    <div class="tools">
+      <div class="tools_name">Python</div>
+      <div class="tools_name">Flask</div>
+      <div class="tools_name">JS</div>
+      <div class="tools_name">Web scraping</div>
+    </div>
+    <h1 class="project_in_heading">GlamIntel</h1>
+    <h4 class="project_in_subheading">AI-powered insights into trends, ingredients, and product recommendations.</h4>
+
+
+  </div>
+
+</div>
+
+<div class="box_content project_content" id="web">
+
+  <div class="box_content_6">
+    <img class="project_img" src="assets/chatapp_project.png" alt="img-6">
+    <div class="tools">
+      <div class="tools_name">Socket.IO</div>
+      <div class="tools_name">Node.js</div>
+      <div class="tools_name">Express</div>
+      <div class="tools_name">FE Stack</div>
+    </div>
+    <h1 class="project_in_heading">PingPal</h1>
+    <h4 class="project_in_subheading"> Chat with friends instantly using real-time socket connections.</h4>
+  
+  
+  </div>
+
+  <div class="box_content_1">
+    <img class="project_img" src="assets/desh_board_project.png" alt="img-3">
+    <div class="tools">
+      <div class="tools_name">FE Stack</div>
+      <div class="tools_name">Chart.js</div>
+      <div class="tools_name">React</div>
+    </div>
+   <h1 class="project_in_heading">Data Pulse App</h1>
+   <h4 class="project_in_subheading">An intelligent dashboard showing analytics, metrics, and user insights.</h4>
+
+  </div>
+
+  <div class="box_content_2">
+    <img class="project_img" src="assets/smartwatch_project.jpg" alt="img-2">
+    <div class="tools">
+      <div class="tools_name">HTML</div>
+      <div class="tools_name">CSS</div>
+      <div class="tools_name">JS</div>
+    </div>
+    <h1 class="project_in_heading">Eonix Smartwatch</h1>
+    <h4 class="project_in_subheading">A product based wesite for a futurestic techy smartwatch brand name Eonix</h4>
+  
+  </div>
+  <div class="box_content_3">
+    <img class="project_img" src="assets/e-com_project.webp" alt="img-3">
+    <div class="tools">
+      <div class="tools_name">React</div>
+      <div class="tools_name">Tailwind CSS</div>
+      <div class="tools_name">Redux Toolkit</div>
+      <div class="tools_name">FakeStore API </div>
+    </div>
+    <h1 class="project_in_heading"> Neo-Cart</h1>
+    <h4 class="project_in_subheading">A clean UI for browsing products and managing cart actions.</h4>
+  
+  
+  </div>
+  <div class="box_content_4">
+    <img class="project_img" src="assets/blog_project.png" alt="img-4">
+    <div class="tools">
+      <div class="tools_name">Node.js</div>
+      <div class="tools_name">Express</div>
+      <div class="tools_name">MongoDB</div>
+      <div class="tools_name">React</div>
+    </div>
+    <h1 class="project_in_heading">Forward Blog</h1>
+    <h4 class="project_in_subheading">Share, read, and manage articles in a beautiful layout.</h4>
+  
+  
+  </div>
+  <div class="box_content_5">
+    <img class="project_img" src="assets/pass_projrct.png" alt="img-5">
+    <div class="tools">
+      <div class="tools_name">Firebase Auth </div>
+      <div class="tools_name">Tailwind CSS </div>
+      <div class="tools_name">React</div>
+    </div>
+    <h1 class="project_in_heading">SecureGate</h1>
+    <h4 class="project_in_subheading">A modern login/signup system with secure auth integration.</h4>
+  
+  
+  </div>
+    
+
+  
+ 
+
+
+
+
+
+</div>
+
+
+  <div class="box_content project_content" id="ml">
+
+
+
+    <div class="box_content_7">
+      <img class="project_img" src="assets/Chatbot_Brain_project.webp" alt="img-7">
+      <div class="tools">
+        <div class="tools_name">PyTorch</div>
+        <div class="tools_name">EEG dataset</div>
+        <div class="tools_name">NumPy</div>
+        <div class="tools_name">Matplotlib </div>
+      </div>
+      <h1 class="project_in_heading">NeurNet</h1>
+      <h4 class="project_in_subheading"> A brain-inspired machine learning model for intelligent pattern recognition.</h4>
+  
+  
+    </div>
+
+
+
+      <div class="box_content_8">
+        <img class="project_img" src="assets/stockprice_detector.png" alt="img-8">
+
+
+        <div class="tools">
+          <div class="tools_name">LSTM</div>
+          <div class="tools_name">TensorFlow</div>
+          <div class="tools_name">pandas</div>
+          <div class="tools_name">yfinance</div>
+          <div class="tools_name">Plotly</div>
+    
+        </div>
+        <h1 class="project_in_heading">StockVision</h1>
+        <h4 class="project_in_subheading"> Forecasts stock market trends using deep learning models.</h4>
+    
+    
+      </div>
+        <div class="box_content_9">
+          <img class="project_img" src="assets/movie_suggestion_project.jpeg" alt="img-9">
+          <div class="tools">
+            <div class="tools_name">TMDB API </div>
+            <div class="tools_name">React</div>
+            <div class="tools_name">Axios</div>
+            <div class="tools_name">Tailwind</div>
+          </div>
+          <h1 class="project_in_heading">CineMatch</h1>
+          <h4 class="project_in_subheading"> Recommends movies based on user mood, genre, or history.</h4>
+      
+      
+        </div>
+
+
+
+
+   </div>
+    
+  <div class="box_content project_content" id="design">
+
+
+
+   <div class="box_content_10">
+    <img class="project_img" src="assets/darkmode_project.webp" alt="img-10">
+    <div class="tools">
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">Adobe XD</div>
+      <div class="tools_name">FontAwesome</div>
+    </div>
+    <h1 class="project_in_heading">UI ConvoBot</h1>
+    <h4 class="project_in_subheading">A modified design of our normal and boaring chat-apps </h4>
+
+
+  </div>
+
+
+        <div class="box_content_11">
+    <img class="project_img" src="assets/landingpageui_project.webp" alt="img-8">
+
+    <div class="tools">
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">HTML</div>
+      <div class="tools_name">ScrollTrigger</div>
+      <div class="tools_name">CSS</div>
+    </div>
+    <h1 class="project_in_heading"> BrandMark</h1>
+    <h4 class="project_in_subheading">A creative and minimal UI for brand to explore there desired design and inspiration.</h4>
+
+
+  </div>
+  <div class="box_content_12">
+    <img class="project_img" src="assets/workflowai_project.webp" alt="img-12">
+    <div class="tools">
+      <div class="tools_name">Figma</div>
+      <div class="tools_name">HTML</div>
+      <div class="tools_name">GSAP</div>
+      <div class="tools_name">CSS</div>
+    </div>
+    <h1 class="project_in_heading">LaunchPad</h1>
+    <h4 class="project_in_subheading">Responsive landing page wireframe crafted with UX in mind.</h4>
+
+
+  </div>
+
+
+      <div class="box_content_13">
+        <img class="project_img" src="assets/portfolio_ui_project.webp" alt="img-13">
+        <div class="tools">
+          <div class="tools_name">FE Stack</div>
+          <div class="tools_name">GSAP</div>
+          <div class="tools_name">Figma</div>
+        </div>
+        <h1 class="project_in_heading">Devfolio</h1>
+        <h4 class="project_in_subheading">A clean, responsive personal site for showcasing work and skills.</h4>
+    
+    
+      </div>
+    
+      <div class="box_content_14">
+      <img class="project_img" src="assets/product_ui_project.webp" alt="img-8">
+      </div>
+      
+ 
+  </div>
+  <div class="box_content project_content" id="other">
+    <div class="box_content_15">
+      <img class="project_img" src="assets/ai_cosmetics_reserch_project.png" alt="img-9">
+      <div class="tools">
+        <div class="tools_name">Python</div>
+        <div class="tools_name">Flask</div>
+        <div class="tools_name">JS</div>
+        <div class="tools_name">Web scraping</div>
+      </div>
+      <h1 class="project_in_heading">GlamIntel</h1>
+      <h4 class="project_in_subheading">AI-powered insights into trends, ingredients, and product recommendations.</h4>
+  
+  
+    </div>
+
+  </div>
+
+
+
+
+    
+  </section>
+
+
+
+
+
+ <!-- ----------          Contact me    --------------->
+ 
+
+<section class="contact" id="contact">
+  <h2 class="contact_heading">Let's Connect</h2>
+  <p class="contact_subheading">Feel free to reach out — let's create impactful digital experiences together.</p>
+<div class="contact_wrapper">
+<div class="contact_box">
+  <h3 class="contact_box_heading">Contact</h3>
+  <form id="submit-to-google-sheet">
+    <input type="text" class="contact_box_name" name="Name" placeholder="Your Name" required />
+    <input type="tel" class="contact_box_phone" name="Phone" placeholder="Your Phone" required />
+    <input type="email" class="contact_box_email" name="Email" placeholder="Your Email" required />
+    <input type="text" class="contact_box_sub" name="Subject" placeholder="Subject" required />
+    <textarea class="contact_box_txt" name="Message" rows="4" cols="50" placeholder="Write your message..." required></textarea>
+    <button type="submit" class="contact_box_btn">Send Message</button>
+  </form>
+
+</div>
+
+
+  <script type="module"  src="https://unpkg.com/@splinetool/viewer@1.10.24/build/spline-viewer.js"></script>
+  <spline-viewer  class="robot" url="https://prod.spline.design/5XDQGjtQ9BY5WSF1/scene.splinecode"></spline-viewer>
+ <!-- <div class="projects-diagonal"></div>-->
+    
+  </div>
+  <div class="projects-diagonal"></div>
+</section>
+
+
+<!------------------- FOOTER----------------->
+<section class="footer">
+  <h2 class="name_footer">Swarup Das</h2>
+
+  <div class="nav_name_footer">
+    <div class="nav_home_footer"><a href=#home>Home</a></div>
+    <div class="nav_about_footer"><a href=#about>About</a></div>
+    <div class="nav_project_footer"><a href=#project>Projects</a></div>
+    <div class="nav_project_footer"><a href=#contact>Contact</a></div>
+    
+    
+    
+    </div>
+
+
+
+    <div class="footer_social_link">
+      <a href="https://github.com/swarup081" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    
+      <a href="https://www.linkedin.com/in/swarup-das081/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    
+      <a href="mailto:dasswarup_work@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+    
+      <a href="https://www.instagram.com/swarup_81" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    
+      <a href="assets/swarup_rusume.png" download aria-label="Download Resume">
+        <i class="fas fa-file-arrow-down"></i> Resume
+      </a>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2025 Swarup Das. All rights reserved.</p>
+</section>
+
+
+
+
+ <!-- Background animation script for 2nd page -->
+  <script src="background_about_finisher.js" type="text/javascript"></script>
+  <script src="background_page2.js" type="text/javascript"></script>
+
+
+  <script src="item_button.js" type="text/javascript"></script> <!-- for button k jesa work kre when click tab hee desired output show kre--> 
+
+  <script src="projectbutton.js" type="text/javascript"></script><!-- project k button to click all/ml/design/other-->
+  <script src="contact_me_google_form" type="text/javascript"></script> <!-- contact me form js file -->
+
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+
+
+
+  
+   </body>
+  </html>

@@ -1,0 +1,251 @@
+
+/*--------------------------------- Hero section ----------------------------------*/
+.hero{
+  background: radial-gradient(circle, rgb(18, 8, 55) 0%, rgb(4, 9, 42) 40%, rgba(0, 0, 1, 0.979) 100%);
+  width:100vw;
+  height:100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin: 0;
+  padding:0;
+}
+
+/* Container for hero image */
+.hero_img{
+  width: auto;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  z-index: 1;
+  margin-left: -3rem;
+}
+
+/* Style for hero image */
+.hero_img img{
+  width:auto;
+  height: 70vh;
+  object-fit: cover;
+  object-position: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sections for coder and UI/UX text blocks */
+.coder-section{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 36%;
+text-align: center;
+margin-top: -3rem;
+margin-left: 4.75rem;
+margin-right: 3rem;
+position: relative;
+z-index: 2;
+
+}
+.uiux-section {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+width: 36%;
+text-align: center;
+margin-top: -3rem;
+}
+
+/* Wrapper for content layout inside each section */
+.content-wrapper {
+
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+align-items: center;
+justify-content: center;
+
+}
+
+/* Main UI/UX heading styling */
+.uiux_header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: auto;
+  margin: 0;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 80px;
+  z-index: 2;
+  text-align: center;
+  margin-top: -2rem;
+  letter-spacing: 0.001em;
+  left: -5rem;
+
+}
+
+/* Styling for emphasized span in UI/UX */
+.uiux span {
+  font-weight: 800;
+}
+
+/* Special text effects for individual characters in UI/UX */
+.u {
+  background: linear-gradient(to right, #6ec0ff, #a574ff);
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.i {
+  color: #b18fff;
+}
+
+.u-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #b759ff;
+}
+
+.x {
+  color: transparent;
+  -webkit-text-stroke: 2px #d3507a;
+}
+
+/* Main Coder heading styling */
+.coder_header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: auto;
+  margin: 0;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 5.6rem;
+  z-index: 2;
+  left: 0;
+  text-align: center;
+  margin-top: -2rem;
+  letter-spacing: 0.05em;
+}
+
+
+/* Emphasis styling for each character in Coder */
+.coder_header span {
+  font-weight: 600;
+}
+
+/* Gradient and stroke styles for each character in Coder */
+.c {
+  background: linear-gradient(to right, #6ec0ff, #a574ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.o {
+  background: linear-gradient(to right, #b18fff, #b18fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.d {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #b759ff;
+}
+
+.e {
+  background: linear-gradient(to right, #ff8ac2, #d3507a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.r {
+  color: transparent;
+  -webkit-text-stroke: 2px #d3507a;
+}
+
+/* Styling for additional symbol characters */
+.symbols {
+  color: #ffffff88;
+} 
+
+/* Subheading styles for Coder and UI/UX sections */
+.coder_sub{
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  height: auto;
+  margin: 0;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  left: 0;
+  z-index: 2;
+  margin-top: -1rem;
+}
+
+
+.uiux_sub{
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 0;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  right: 0;
+  z-index: 2;
+  left: -5rem;
+  margin-top: -1rem;
+
+}
+
+/* Hover effects for subheadings */
+.coder_sub:hover,
+.uiux_sub:hover {
+text-shadow: 0 0 1px rgba(255,255,255,0.7), 0 0 2px rgba(255,255,255,0.5);
+
+}
+
+/* Animation for sliding text upward */
+@keyframes slideUp {
+0% {
+  opacity: 0;
+  transform: translateY(40px);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+/* Class to trigger scroll-based animation */
+.scroll-animate-up {
+opacity: 0;
+animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Additional delay for heading animation */
+.heading {
+animation-delay: 0.2s;
+position: relative;
+}
+
+/* Additional delay for subheading animation */
+.subheading {
+animation-delay: 0.8s;
+position: relative;
+}
+
+

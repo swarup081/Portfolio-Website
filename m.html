@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- Base HTML document structure -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Code Editor</title>
+  <!-- Internal styles for layout, theming, responsiveness, and editor/preview UI -->
+  <style>
+    /* Utility class to hide elements completely */
+    .hidden {
+      display: none !important;
+    }
+    /* Light/Dark theme variables */
+    :root {
+      --bg-dark: #1e1e2f;
+      --bg-light: #f4f4f4;
+      --toolbar-bg: #29293d;
+      --accent: #00e1ff;
+      --darkbg:#251D29;
+      --darkt: #FFD1F7;
+      --lightbg: #fff;
+      --lightt: #D43370;
+
+      --toggleHeight: 16em;
+      --toggleWidth: 30em;
+      --toggleBtnRadius: 10em;
+
+      --bgColor--night: #423966;
+      --toggleBtn-bgColor--night: var(--bgColor--night);
+      --mooncolor: #D9FBFF;
+      --bgColor--day: #9ee3fb;
+      --toggleBtn-bgColor--day: var(--bgColor--day);
+    }
+ 
+
+    /* Global layout and font */
+    .code_me_inside {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: yellow !important;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    /* Header toolbar at top of the page */
+    .toolbar {
+      background: var(--toolbar-bg);
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+    }
+    /* Styling for control buttons (theme, download) */
+    .toolbar button {
+      margin-left: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: #444;
+      color: #eee;
+      border: none; border-radius: 4px;
+      cursor: pointer;
+    }
+    /* Tab navigation buttons */
+    .tabs {
+      display: flex;
+      background: var(--toolbar-bg);
+      overflow-x: auto;
+    }
+    /* Tab button styles */
+    .tab-button {
+      flex: 1;
+      padding: 0.8rem;
+      background: none;
+      border: none;
+      color: #aaa;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    /* Highlight active tab */
+    .tab-button.active {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    /* Main container that holds the editor and preview */
+    .main-area {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem 2rem;
+      gap: 1.5rem;
+      flex: 1;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      height: 100%;
+    }
+
+    /* Editor container styling (left half) */
+    .editor-container {
+      flex: 1;
+      min-width: 0;
+      max-height:max-content;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #1e1e2f;
+
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+    } 
+
+    /* Only visible editor container */
+    .editor-container.active {
+      display: flex;
+    }
+
+    /* Toolbar inside editor for tab and control buttons */
+    .editor-toolbar {
+      background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 12px 12px 0 0;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Align the two buttons horizontally inside the toolbar */
+    .editor-toolbar > div {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    /* Buttons inside the editor toolbar - consistent size for both buttons */
+    #themeBtn,
+    #downloadBtn {
+      width: 480x;
+      height: 40px;
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #themeBtn img,
+    #downloadBtn img {
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      opacity: 70%;
+    }
+
+    /* CodeMirror editor styling */
+    .editor-container textarea {
+      height: 100%;
+      width: 100%;
+      border: none;
+      outline: none;
+      resize: none;
+      background: #1c1f2b;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: 5px;
+      flex-grow: 1;
+    }
+
+
+
+
+
+    .light {
+      background: var(--lightbg);
+      color: var(--lightt);
+    }
+
+    .tdnn {
+      margin: 0;
+      font-size: 22%;
+      position: relative;
+      height: calc(var(--toggleHeight) * 0.55);
+      width: calc(var(--toggleWidth) * 0.55);
+      border-radius: calc(var(--toggleHeight) * 0.55);
+      transition: all 500ms ease-in-out;
+      background: var(--bgColor--night);
+    }
+
+    .day {
+      background: #FFBF71;
+    }
+
+    .moon {
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      transition: all 400ms ease-in-out;
+      top: 1.8em;
+      left: 1.8em;
+      transform: rotate(-75deg);
+      width: calc(var(--toggleBtnRadius) * 0.55);
+      height: calc(var(--toggleBtnRadius) * 0.55);
+      background: var(--bgColor--night);
+      box-shadow: 
+        1.8em 1.5em 0 0em var(--mooncolor) inset,
+        rgba(255, 255, 255, 0.1) 0em -4em 0 -3em,
+        rgba(255, 255, 255, 0.1) 1.8em 4em 0 -3em,
+        rgba(255, 255, 255, 0.1) 1.2em 7em 0 -2.4em,
+        rgba(255, 255, 255, 0.1) 3.6em 1.2em 0 -2.46em,
+        rgba(255, 255, 255, 0.1) 4.8em 4.8em 0 -2.7em,
+        rgba(255, 255, 255, 0.1) 3.6em 7em 0 -2.7em,
+        rgba(255, 255, 255, 0.1) -2.4em 4em 0 -2.7em,
+        rgba(255, 255, 255, 0.1) -0.6em 5.6em 0 -2.7em;
+    }
+
+    .sun {
+      top: 2.7em;
+      left: 10.8em;
+      transform: rotate(0deg);
+      width: 4.2em;
+      height: 4.2em;
+      background: #fff;
+      box-shadow: 1.8em 1.8em 0 3em #fff inset,
+        0 -3em 0 -1.62em #fff,
+        2.1em -2.1em 0 -1.8em #fff,
+        3em 0 0 -1.62em #fff,
+        2.1em 2.1em 0 -1.8em #fff,
+        0 3em 0 -1.62em #fff,
+        -2.1em 2.1em 0 -1.8em #fff,
+        -3em 0 0 -1.62em #fff,
+        -2.1em -2.1em 0 -1.8em #fff;
+    }
+
+
+
+
+
+    
+    /* Updated CodeMirror styles */
+    .CodeMirror {
+      padding: 0 !important;
+      text-align: left !important;
+    }
+
+    .CodeMirror-scroll {
+      padding: 0 !important;
+    }
+
+    .CodeMirror pre.CodeMirror-line,
+    .CodeMirror pre.CodeMirror-line-like {
+      padding-left: 8px !important;
+      text-align: left !important;
+    }
+
+    /* Live preview styling (right half) */
+    .preview {
+      flex: 1;
+      min-width: 0;
+      max-width: 64vh;
+      min-height: 40vh;
+      max-height: 90vh;
+      border-radius: 18px;
+      background-color: #fff5f8;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 8px 15px rgba(0, 0, 0, 0.3);
+      border: 2px solid #f368e0;
+    }
+
+    /* Iframe for rendering live output */
+    .preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 16px;
+      background-color: white;
+    }
+
+    /* Responsive behavior for smaller screens */
+    @media (max-width: 768px) {
+      .main-area {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .editor-container,
+      .preview {
+        height: 50vh;
+      }
+    }
+
+
+   
+  </style>
+  <!-- CodeMirror core and theme styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/dracula.min.css"/>
+</head>
+<div class="code_me_inside">
+  <!-- Main area containing the editor and the live preview iframe -->
+  <div class="main-area">
+    <!-- Editor container holding the CodeMirror instance and toolbar -->
+    <div class="editor-container active">
+      <!-- Editor toolbar with title and control buttons -->
+      <div class="editor-toolbar">
+        <span></span>
+        <div>
+          <button id="downloadBtn" title="Download">
+            <img src="assets/download_portfolio-Photoroom.png" alt="Download" width="20" height="20" />
+          </button>
+          <div class="tdnn">
+            <div class="moon" id="themeToggle"></div>
+          </div>
+        </div>
+      </div>
+      <!-- HTML editor - default editor initialized on load -->
+      <textarea id="htmlEditor"></textarea>
+    </div>
+    <!-- Live preview area that renders the output using an iframe -->
+    <div class="preview">
+      <iframe id="preview" sandbox="allow-scripts"></iframe>
+    </div>
+  </div>
+
+  <!-- Load CodeMirror library and language modes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"></script>
+  <!-- CodeMirror mode for XML (HTML) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/xml/xml.min.js"></script>
+  <!-- CodeMirror mode for CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/css/css.min.js"></script>
+  <!-- CodeMirror mode for JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/javascript/javascript.min.js"></script>
+ 
+
+  <script>
+    // Initialize CodeMirror editors object, only HTML is initialized at load
+    const editors = {};
+    editors.html = CodeMirror.fromTextArea(document.getElementById('htmlEditor'), {
+      mode: 'xml',
+      theme: 'dracula',
+      lineNumbers: true
+    });
+    // Reference to the iframe where output will be rendered
+    const preview = document.getElementById('preview');
+    
+    // Function to update the live preview iframe with the current editor content
+    const update = () => {
+      const html = editors.html ? editors.html.getValue() : '';
+      preview.srcdoc = html;
+    };
+    editors.html.on('change', update);
+    update();
+
+    // Tab switching logic to handle different editor types (HTML, CSS, JS)
+    document.querySelectorAll('.tab-button').forEach(btn =>
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const container = document.querySelector('.editor-container');
+        const active = document.querySelector('.editor-container .CodeMirror');
+
+        if (active) container.removeChild(active);
+
+        // No dynamic editors for css or js, so do nothing on tab switch
+      })
+    );
+
+
+    // Combine and download HTML content as an HTML file
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      const content = editors.html.getValue();
+      const blob = new Blob([content], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'snippet.html';
+      a.click();
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let light = false;
+      $('.tdnn').click(function () {
+        $('body').toggleClass('light');
+        $('.moon').toggleClass('sun');
+        $('.tdnn').toggleClass('day');
+
+        // Animate the CodeMirror theme change
+        const newTheme = light ? 'dracula' : 'default';
+        Object.values(editors).forEach(cm => {
+          cm.getWrapperElement().style.transition = 'background-color 0.5s ease, color 0.5s ease';
+          cm.setOption('theme', newTheme);
+        });
+
+        light = !light;
+      });
+    });
+  </script>
+</div>
+</html>

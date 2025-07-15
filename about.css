@@ -1,0 +1,259 @@
+
+/* ----------------------    About section styles  -----------------------*/
+.about_me{
+  width: 100vw;
+  height: 100vh;
+  overflow-x:hidden;
+  }
+  
+  
+  .about_wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 100vw;
+    width: auto;
+    min-height: 100vh;
+    height:auto;
+    margin: 0;
+    padding-left: 8rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about_photo_container{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+   
+  }
+  
+  
+  .about_img{
+    width: 50vw;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .about_img img{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow:  0px 0px 26px rgba(210, 209, 209, 0.5);
+  
+  }
+  
+  .header.finisher-header {
+    width: 100%;
+    max-height: 100vh; /* ensures it takes full screen if content is short */
+    position: relative;
+    color: #ffffff;
+  }
+  
+  .heading_about{
+    display: flex;
+    justify-content: flex-start ;
+    height: auto;
+    margin: 0;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    z-index: 2;
+    text-align: center;
+    margin-top: -13.5rem;
+    letter-spacing: 0.07em;
+  }
+  
+  .about_header{
+    padding-top:12rem;
+   padding-left: 7rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   
+  }
+
+.about_header{
+  scale:1.2;
+ }
+  
+  
+  /* for typing effect */
+  .typing_effect{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    height: auto;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .animated-text{
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 280px;
+  }
+  
+  .animated-text span{
+    position: relative;
+  }
+  
+  .animated-text span::before{
+    content: "Web Developer";
+    color: #d3507a;
+    animation: words 20s infinite;
+  }
+  
+  .animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #090419;
+    border-left: 2px solid #eae0dc;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+  }
+  
+  @keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+  }
+  
+  @keyframes words {
+    0%,20%{
+        content: "Web Developer";
+    }
+    21%,40%{
+        content: " Creative Coder";
+    }
+    41%,60%{
+        content: "UI/UX Designer";
+    }
+    61%,80%{
+        content: "APP Developer";
+    }
+    81%,100%{
+        content: "ML Enthusiast";
+    }
+  }
+  
+  @keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+  }
+  /* subheading of about me */
+  .sub_heading{
+    font-size: 13.5px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    padding-top: 0.4rem;
+  }
+  
+  /*----------------------    items section styles  -----------------------*/
+  .items{
+    width: 100%;
+    height: auto;
+    display: flex ;
+    flex-direction: row ;
+    margin: 10px 0 15px;
+    gap: 2.3rem;
+    padding: 0; 
+    list-style: none; 
+    display: table;
+    width: 600px;
+    
+  }
+  .items_head {
+    color: #d3507a;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding-right: 1.5rem;
+    display: inline-block;
+    position: relative;
+  }
+   
+  .items_head{
+    color: #d3507a;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    
+    display: inline-block;
+    position: relative;
+  }
+  
+  
+  /* Item styles for the list */
+  .items li {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .item_content{
+    display: none;
+  }
+  
+  
+  .item_content.active-tab {
+    display: block;
+  }
+  .item_content ul li{
+    list-style: none;
+    margin: 10px 0;
+    font-size:12px;
+  }
+  
+  .item_content ul li span {
+    color: #98ecff;
+    font-weight: 600;
+    width: 1em;
+    font-size: 15px;
+  }
+  
+  /* Active tab underline animation and styling */
+  .items_head.active_link:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #98ecff;
+    animation: slideIn 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      width: 0;
+      opacity: 0.4;
+    }
+    to {
+      width: 30%;
+      opacity: 1;
+    }
+  } 

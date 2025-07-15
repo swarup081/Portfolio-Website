@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfilo Website</title>
+
+  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> 
+    <link rel="stylesheet" href="styles.css" />
+
+
+  </head>
+
+  <body>
+
+
+    <section class="hero" id="home"> <!-- Hero Section -->
+
+
+      <div class="coder-section"> <!-- <coder> Section -->
+        <div class="scroll-animate-up heading"> <!-- scroll-up -->
+          <div class="coder-wrapper">
+            <div class="coder_header">
+              <span class="symbols">&lt;</span> 
+              <span class="c">C</span>
+              <span class="o">O</span>
+              <span class="d">D</span>
+              <span class="e">E</span>
+              <span class="r">R</span>
+              <span class="symbols">&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-animate-up subheading"> <!-- subhding dly krna hai css pe -->
+          <div class="coder_sub">
+            <p>Aspiring developer turning ideas into<br>  clean,functional code. Passionate<br>  about building intuitive web experiences.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero_img">
+        <img src="photo/herophoto_portfolio.png" alt="My photo for coder page"/>  <!--img middle pe-->
+      </div>
+      <div class="uiux-section">  <!-- uiux Section -->
+        <div class="scroll-animate-up heading">
+          <div class="uiux_header">
+            <div class="uiux">
+              <span class="u">U</span>
+              <span class="i">I</span>
+              <span class="u-outline">U</span>
+              <span class="x">X</span>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-animate-up subheading">
+          <div class="uiux_sub">
+            <p>Blending design and function to craft<br> user-friendly, engaging, and<br> visually pleasing digital experiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about_me" id="about"> <!-- About Section -->
+      <div class="about_wrapper">
+        <div class="about_header">
+          <h1>About Me</h1>
+        </div>
+        <div class="about_content">
+          <p>I'm a passionate web developer with a keen eye for design and a love for creating intuitive user experiences. My journey in web development has been driven by a desire to turn ideas into reality, crafting clean and functional code that enhances the digital landscape.</p>
+          <p>With a background in both front-end and back-end development, I thrive on the challenge of building responsive, user-friendly websites that not only look great but also perform seamlessly across devices. My goal is to create digital experiences that are not only visually appealing but also highly functional and accessible to all users.</p>
+        </div>
+      </div>
+      <div class="about_img">
+        <img src="photo/aboutphoto_portfolio.png" alt="My photo for about page"/>
+      </div>
+    </section>
+  </body>
+  </html>
+
+
+
+
+
+
+  /* Portfolio Website Stylesheet
+  Author: Swarup
+  Description: Styling for hero section, headings, animations, and themed typography.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Define global CSS variables */
+:root {
+   --font-main:  system-ui, sans-serif;
+   }
+
+/* Global body styles */
+body {
+   margin:0;
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+   overflow-x: hidden;
+     }
+
+/* Hero section layout and background */
+.hero{
+   background: radial-gradient(circle, rgb(20, 10, 55) 0%, rgb(10, 13, 38) 40%, rgba(0, 0, 1, 0.979) 100%);
+   width:100%;
+   height:100vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   z-index: 1;
+   padding-top: 5rem;
+   padding-bottom: 5rem;
+}
+
+/* Container for hero image */
+.hero_img{
+   width: auto;
+   height: 75vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   object-fit: contain;
+   z-index: 1;
+   margin-left: -3rem;
+}
+
+/* Style for hero image */
+.hero_img img{
+   width:auto;
+   height: 70vh;
+   object-fit: cover;
+   object-position: center;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   z-index: 1;
+}
+
+/* Sections for coder and UI/UX text blocks */
+.coder-section{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: 36%;
+ text-align: center;
+ margin-top: -3rem;
+ margin-left: 4.75rem;
+ margin-right: 3rem;
+ position: relative;
+ z-index: 2;
+
+}
+.uiux-section {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: 36%;
+ text-align: center;
+ margin-top: -3rem;
+}
+
+/* Wrapper for content layout inside each section */
+.content-wrapper {
+
+ display: flex;
+ flex-direction: column;
+ gap: 1.25rem;
+ align-items: center;
+ justify-content: center;
+ 
+}
+
+/* Main UI/UX heading styling */
+ .uiux_header {
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   height: auto;
+   margin: 0;
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+   font-size: 80px;
+   z-index: 2;
+   left: 0;
+   text-align: center;
+   margin-top: -2rem;
+   letter-spacing: 0.001em;
+   left: -5rem;
+ }
+ 
+/* Styling for emphasized span in UI/UX */
+ .uiux span {
+   font-weight: 800;
+ }
+
+/* Special text effects for individual characters in UI/UX */
+ .u {
+   background: linear-gradient(to right, #6ec0ff, #a574ff);
+   -webkit-background-clip: text;
+
+   -webkit-text-fill-color: transparent;
+ }
+
+ .i {
+   color: #b18fff;
+ }
+
+ .u-outline {
+   color: transparent;
+   -webkit-text-stroke: 1.5px #b759ff;
+ }
+
+ .x {
+   color: transparent;
+   -webkit-text-stroke: 2px #ff4db3;
+ }
+
+/* Main Coder heading styling */
+ .coder_header {
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   height: auto;
+   margin: 0;
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+   font-size: 5.6rem;
+   z-index: 2;
+   left: 0;
+   text-align: center;
+   margin-top: -2rem;
+   letter-spacing: 0.05em;
+ }
+
+
+/* Emphasis styling for each character in Coder */
+ .coder_header span {
+   font-weight: 600;
+ }
+
+/* Gradient and stroke styles for each character in Coder */
+ .c {
+   background: linear-gradient(to right, #6ec0ff, #a574ff);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+
+ .o {
+   background: linear-gradient(to right, #b18fff, #b18fff);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+
+ .d {
+   color: transparent;
+   -webkit-text-stroke: 1.5px #b759ff;
+ }
+
+ .e {
+   background: linear-gradient(to right, #ff8ac2, #ff4db3);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+
+ .r {
+   color: transparent;
+   -webkit-text-stroke: 2px #ff4db3;
+ }
+
+/* Styling for additional symbol characters */
+ .symbols {
+   color: #ffffff88;
+ } 
+
+/* Subheading styles for Coder and UI/UX sections */
+ .coder_sub{
+   color: #ffffff;
+   text-align: center;
+   align-items: center;
+   height: auto;
+   margin: 0;
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+   left: 0;
+   z-index: 2;
+   margin-top: -1.897rem;
+ }
+
+
+ .uiux_sub{
+   text-align: center;
+   color: #ffffff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: auto;
+   margin: 0;
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+   right: 0;
+   z-index: 2;
+   margin-top: -1.897rem;
+   left: -5rem;
+
+ }
+
+/* Hover effects for subheadings */
+.coder_sub:hover,
+.uiux_sub:hover {
+ text-shadow: 0 0 1px rgba(255,255,255,0.7), 0 0 2px rgba(255,255,255,0.5);
+
+}
+
+/* Animation for sliding text upward */
+@keyframes slideUp {
+ 0% {
+   opacity: 0;
+   transform: translateY(40px);
+ }
+ 100% {
+   opacity: 1;
+   transform: translateY(0);
+ }
+}
+
+/* Class to trigger scroll-based animation */
+.scroll-animate-up {
+ opacity: 0;
+ animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Additional delay for heading animation */
+.heading {
+ animation-delay: 0.2s;
+ position: relative;
+}
+
+/* Additional delay for subheading animation */
+.subheading {
+ animation-delay: 0.8s;
+ position: relative;
+}
+
+
+.about_me{
+ width: 100%;
+ height: 100vh;
+
+}
+
+

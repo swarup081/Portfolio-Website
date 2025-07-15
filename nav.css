@@ -1,0 +1,132 @@
+   
+/*----------------------------------Nav section------------------------------------*/
+.nav{
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    width:100vw;
+    height:4.6rem;
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    background-color: #060015;
+  }
+  
+  
+  .logo img{
+    width:13rem;
+    height:80%;
+    justify-content: center;
+    align-items: center;
+    padding:12px 0px 5px 30px;
+    cursor: pointer;
+    margin-top:-1rem;
+  
+  }
+  .nav_name{
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap:3rem;
+    left: -7rem;
+    top:1.3rem;
+    
+  }
+  
+  .nav_name a{
+    text-decoration: none;
+    color:#bfc1e6;
+    font-weight: 600;
+  
+  }
+  .nav_name a:hover{
+    color:#8a4fff
+  }
+  
+  .github_button{
+    margin-top:-1.9rem;
+
+    margin-bottom: 20px;
+    margin-left: 48rem;
+  }
+  .github-btn {
+    width: 8rem;
+    height: auto;
+    position: relative;
+    display: flex;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #bfc1e6;
+    background: #191a2b;
+    border-radius: 40px;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    border: none;
+  }
+  
+  /* 🔥 Animated Gradient Border */
+  .github-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4449d3, #8a4fff, #4449d3);
+    border-radius: 40px;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: borderGlow 5s ease infinite;
+  }
+  
+  /* ✨ Hover effect: text glow + border color shift + soft shadow */
+  .github-btn:hover {
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(138, 79, 255, 0.3), 0 0 40px rgba(68, 73, 211, 0.2);
+    background: #23264a;
+    border: 1px solid #5c6ac4;
+    text-shadow: 0 0 8px #8a4fff, 0 0 16px #5c6ac4;
+  }
+  
+  @keyframes borderGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .github-btn .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+
+
+
+/* Base/mobile styles */
+.hamburger {
+  display: block;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Desktop: completely remove from layout */
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none !important;
+    position: absolute; /* ensures it doesn't take space */
+    visibility: hidden;
+  }
+}

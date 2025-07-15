@@ -1,0 +1,237 @@
+
+/*----------------------    Projects  -----------------------*/
+
+.projects{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem 0rem 2rem;
+  
+    position: relative;
+    z-index: 1; 
+  }
+  
+  .project_heading{
+    color: #fff;
+    font-size: 2.3rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project_subheading{
+    color: #aeaeae;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    font-size: 100;
+    z-index: 2;
+  }
+  
+  /* for button nev k jesa like konsa project dekhna hai */
+  .box{
+    display: flex;
+    flex-direction: row;
+  }
+  .box_1 {
+    border: 2px solid #141736;
+    padding: 10px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding-left: 23px;
+    padding-right: 23px;
+    color: #5c5f7c;
+    cursor: pointer;
+  }
+  
+  .box_2 {
+    border-top: 2px solid #141736;
+    border-bottom: 2px solid #141736;
+    border-right: 2px solid #141736;
+    padding: 10px;
+    padding-left: 23px;
+    padding-right: 23px;
+    color: #5c5f7c;
+    cursor: pointer;
+  
+  }
+  .box_3{
+    border-top: 2px solid #141736;
+    border-bottom: 2px solid #141736;
+    border-right: 2px solid #141736;
+    padding: 10px;
+    padding-left: 23px;
+    padding-right: 23px;
+    color: #5c5f7c;
+    cursor: pointer;
+  
+  }
+  
+  .box_4{
+    border-top: 2px solid #141736;
+    border-bottom: 2px solid #141736;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding: 10px;
+    color: #5c5f7c;
+    cursor: pointer;
+  
+  }
+  
+  .box_5{
+    border: 2px solid #141736;
+    padding: 10px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding-left: 23px;
+    padding-right: 23px;
+    color: #5c5f7c;
+    cursor: pointer;
+  
+  }
+  
+  /* project overview*/
+  
+  
+  .box_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* spacing between cards */
+    padding: 40px 0px;
+  }
+  
+  .box_content_1,.box_content_2,
+  .box_content_3,
+  .box_content_4,
+  .box_content_5,
+  .box_content_6,
+  .box_content_7,
+  .box_content_8,
+  .box_content_9,
+  .box_content_10,
+  .box_content_11,
+  .box_content_12,
+  .box_content_13,
+  .box_content_14,
+  .box_content_15
+   {
+    padding: 10px;
+    border-radius: 12px;
+    width:330px;
+    height:490px;
+    box-shadow: 0 0 12px #10132c;
+    border: 1px solid #141736;
+    background-image: url('assets/card-bg.png');
+    background-repeat: repeat-y;
+    background-size: 100% 100%;
+    background-position: top center;
+  }
+  
+  
+  .box_content_1:hover,
+  .box_content_2:hover,
+  .box_content_3:hover,
+  .box_content_4:hover,
+  .box_content_5:hover,
+  .box_content_6:hover,
+  .box_content_7:hover,
+  .box_content_8:hover,
+  .box_content_9:hover,
+  .box_content_10:hover,
+  .box_content_11:hover,
+  .box_content_12:hover,
+  .box_content_13:hover,
+  .box_content_14:hover,
+  .box_content_15:hover
+   {
+    box-shadow: 0 0 40px #1a1c34;
+    transform: translateY(-12px);
+  
+   }
+  
+  
+  
+  .project_img{
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    width:88%;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px 0px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .project_in_heading {
+    color: #d4d6f4; /* Soft bright */
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-left: 20px;
+    text-align: start;
+    transition: color 0.3s ease;
+  }
+  .project_in_heading:hover {
+    color: #98ecff;
+  }
+  
+  .project_in_subheading {
+    color: #7c819c;
+    font-weight: 400;
+    font-size: 0.92rem;
+    margin-left: 20px;
+    text-align: start;
+    transition: color 0.3s ease;
+  }
+  .project_in_subheading:hover {
+    color: #b0b3c3;
+  }
+  .tools{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:10px 0px 10px 20px;
+    gap: 0.7rem;
+    padding-left: 20px;
+  }
+  
+    .tools_name {
+      color: #cfe4ff;
+      background: linear-gradient(to bottom, #10142d, #1d274b);
+      border: 1px solid #2d3456;
+      box-shadow: 0 0 8px rgba(152, 236, 255, 0.2);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  
+  
+    .tools_name:hover {
+      box-shadow: 0 0 10px #98ecff;
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+    }
+  
+  
+  
+  
+  
+  .active_project_link {
+    background-color: #141736;
+    color: #98ecff;
+    font-weight: 600;
+    border: 2px solid #1c1f3a;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px #1c1f3a;
+  }
+  

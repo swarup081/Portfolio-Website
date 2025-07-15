@@ -1,0 +1,229 @@
+
+
+/*---------------------Contact  me-----------------------------*/
+
+
+
+
+
+.contact {
+
+    margin-top:5rem;
+    width:100vw;
+    height: auto;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    overflow:hidden;
+  }
+  
+  .contact_heading{
+    color: #fff;
+    font-size: 2.3rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact_subheading{
+    color: #aeaeae;
+    font-size: 1rem;
+    margin-bottom: 3.7rem;
+    text-align: center;
+    position: relative;
+    font-size: 100;
+    z-index: 2;
+  }
+  
+  .contact_box{
+    left:10rem;
+    padding:2.6rem 2rem 1.5rem 2rem;
+    width: 56%;
+    height: auto;
+    border-radius: 2rem;
+    box-shadow: 0 0 32px #10132c;
+    border: 1px solid #141736;
+  
+  border: 1px solid #141736;
+  background: linear-gradient(to bottom, #080b1b, #10132c);  
+  margin-left: 7rem;
+  z-index: 2;
+  }
+  .contact_box_heading{
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact_box_name{
+    margin-top:0.5rem;
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    border: 1.3px solid #222435;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0 15px 20px ;
+    color: #fff;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
+  
+  .contact_box_phone{
+    margin-top:0.5rem;
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    border: 1.3px solid #222435;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0 15px 20px ;
+    color: #fff;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  
+  }
+  .contact_box_email{
+    margin-top:0.5rem;
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    border: 1.3px solid #222435;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0 15px 20px ;
+    color: #fff;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  
+  }
+  .contact_box_sub{
+    margin-top:0.5rem;
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    border: 1.3px solid #222435;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0 15px 20px ;
+    color: #fff;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  
+  }
+  .contact_box_txt {
+    margin-top:0.5rem;
+    width: 100%;
+    height: 10.6rem;
+    border-radius: 0.8rem;
+    border: 1.3px solid #222435;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0 15px 20px ;
+    color: #fff;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
+  
+  .contact_box_btn{
+    margin-top:0.5rem;
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    border: 1.3px solid #222435;
+    background-color: #98ecff;
+    box-shadow: 0 0 8px #98ecff88;
+   
+  
+    border-radius: 12px;
+    font-weight: 600;
+  
+    transition: all 0.3s ease;
+  
+    cursor: pointer;  
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0 15px 20px ;
+    color: #1c1b1b;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  
+  }
+  .contact_box_name,
+  .contact_box_phone,
+  .contact_box_email,
+  .contact_box_sub,
+  .contact_box_txt
+  {
+    border: 2px solid #2a2a3b;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    transition: border 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+  
+  /* Focus effect */
+  .contact_box_name:focus,
+  .contact_box_phone:focus,
+  .contact_box_email:focus,
+  .contact_box_sub:focus,
+  .contact_box_txt:focus{
+    border-color: #98ecff;
+    box-shadow: 0 0 8px #98ecff88;
+  }
+  
+  
+  .contact_wrapper {
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  .projects-diagonal {
+    margin-top: 4.3rem;
+    width: 100vw;
+    height: 10rem;
+    clip-path: polygon(
+      32% 50%,
+       0% 100%,  
+       0% 200%,
+       200% 100%,
+       100% 100%
+    );
+    background: linear-gradient(45deg, #4449d3, #8a4fff, #4449d3);  position: relative;
+    left: 0;
+  
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 4s ease;
+  
+    border: none;
+    
+    z-index: 3;
+  }  
+  
+  
+  .robot{      /* Robot image styling */
+    width:100%;
+    height: 100%;
+    position: relative;
+    scale: 2.5;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
